@@ -34,7 +34,7 @@ public class PostController {
 	@GetMapping("/posts")
 	public String posts(Model model) {
 		// 逆順で投稿をすべて取得する
-		List<Posts> list = repo.findAll(Sort.by(Sort.Direction.DESC, "id"));
+		List<Posts> list = repo.findAll(Sort.by(Sort.Direction.ASC,"id"));
 //    Collections.reverse(list); //普通に取得してこちらの処理でもOK
 		model.addAttribute("posts", list);
 		PostForm postForm = new PostForm();
